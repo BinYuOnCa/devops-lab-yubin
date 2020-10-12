@@ -1,0 +1,83 @@
+yubin@M720-ubuntu:~/GitRepos/devops-lab-yubin/lesson-1$ ssh -i /dev/null -v  yubin@simplelinuxvm-w64bnpkedjhci.eastus.cloudapp.azure.com
+OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017
+debug1: Reading configuration data /home/yubin/.ssh/config
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to simplelinuxvm-w64bnpkedjhci.eastus.cloudapp.azure.com [104.211.42.238] port 22.
+debug1: Connection established.
+debug1: key_load_public: No such file or directory
+debug1: identity file /dev/null type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /dev/null-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
+debug1: Remote protocol version 2.0, remote software version OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
+debug1: match: OpenSSH_7.6p1 Ubuntu-4ubuntu0.3 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to simplelinuxvm-w64bnpkedjhci.eastus.cloudapp.azure.com:22 as 'yubin'
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ecdsa-sha2-nistp256
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:VtDc2vgiUkW9e6bWHc3p9BArIjUtIQj1yeaAmK3dNWk
+debug1: Host 'simplelinuxvm-w64bnpkedjhci.eastus.cloudapp.azure.com' is known and matches the ECDSA host key.
+debug1: Found key in /home/yubin/.ssh/known_hosts:12
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering public key: RSA SHA256:5ERln+7R9eIj3U0He0xFJKt8c+7Q6I7QnpmZHHqiltE /home/yubin/.ssh/id_github_rsa_nopass
+debug1: Authentications that can continue: publickey
+debug1: Offering public key: RSA SHA256:xt1vNZkyMZcCNm8KBIhPimnEpevdwO21p+RbqN2J7VU /home/yubin/.ssh/id_devops_az_rsa
+debug1: Server accepts key: pkalg rsa-sha2-512 blen 279
+debug1: Authentication succeeded (publickey).
+Authenticated to simplelinuxvm-w64bnpkedjhci.eastus.cloudapp.azure.com ([104.211.42.238]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: network
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: Sending environment.
+debug1: Sending env LC_ADDRESS\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LC_TIME\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LC_IDENTIFICATION\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LANG = en_CA.UTF-8
+debug1: Sending env LC_NAME\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LC_PAPER\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LC_MEASUREMENT\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LC_MONETARY\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LC_NUMERIC\\tDEFAULT = en_CA.UTF-8
+debug1: Sending env LC_TELEPHONE\\tDEFAULT = en_CA.UTF-8
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1026-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Oct 12 02:58:34 UTC 2020
+
+  System load:  0.0               Processes:           117
+  Usage of /:   4.5% of 28.90GB   Users logged in:     0
+  Memory usage: 7%                IP address for eth0: 10.1.0.4
+  Swap usage:   0%
+
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '20.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Oct 12 02:50:19 2020 from 198.1.238.245
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+yubin@bensVm4DevOps1:~$ 
