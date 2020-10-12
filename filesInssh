@@ -1,0 +1,17 @@
+total 196
+drwx------  2 yubin yubin  4096 Oct 11 20:07 ./
+drwx------ 71 yubin yubin 20480 Oct 11 20:01 ../
+-r--------  1 yubin yubin  1674 Apr  2  2020 AWS_EC2.pem
+-rw-r--r--  1 yubin yubin   747 Apr 18 18:54 clipboard
+-rw-r--r--  1 yubin yubin   244 Apr 18 19:01 config
+-rw-------  1 yubin yubin  1679 Oct 11 20:07 id_devops_az_rsa
+-rw-r--r--  1 yubin yubin   399 Oct 11 20:07 id_devops_az_rsa.pub
+-rw-------  1 yubin yubin  3326 Apr 18 18:47 id_github_rsa
+-rw-------  1 yubin yubin  3243 Apr 18 18:50 id_github_rsa_nopass
+-rw-r--r--  1 yubin yubin   747 Apr 18 18:50 id_github_rsa_nopass.pub
+-rw-r--r--  1 yubin yubin   747 Apr 18 18:47 id_github_rsa.pub
+-r--------  1 yubin yubin  1843 Apr  2  2020 id_rsa_aliyun
+-r--------  1 yubin yubin  1670 Apr  2  2020 KNIME_Ubuntu.pem
+-rw-------  1 yubin yubin  4204 Oct 11 21:27 known_hosts
+-rw-r--r--  1 yubin yubin   444 Apr  2  2020 known_hosts_bak
+-rw-------  1 yubin yubin   222 Apr  2  2020 known_hosts.old
