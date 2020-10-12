@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "yubin"
+    },
+    "authenticationType": {
+      "value": "sshPublicKey"
+    },
+    "vmName": {
+      "value": "bensVm4DevOps1"
+    },
+    "adminPasswordOrKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD9Z5RqWjk5Dulo5+d9AhH6QgYKInrie8FaRh+Iq/vvUehJtE6LCTJ7caohzZxclfD4D+fQFDeF/62BwsmHo2EadGoCJRVGiIperKxCtoDd/MFosPt5YqwC1RaQ8NYHy6xlSs548+tvtDOTykDz1qgLJ6AlUEB4kM7yoLepcXRadiB1RiN+bmuaH23+UeDRFXn7TlXFlihm9Q2lVhOHJ4u551uFjZS98i1YQdNXShFT6FlTnxu2TCmZ4N7u8zKRmfYlYQvtl8qT6EFVqspqE1ARGsbGJWlSf+SBRkMJL3SNfjN30VMzhjBkGhIK0zBI2cUb8gmWzb55OsPFyek6tce3 yubin@M720-ubuntu"
+    },
+    "dnsLabelPrefix": {
+      "value": "dnsLblPfx"
+    }
+  }
+}
+
+// "adminUsername": {
+//   "type": "string",
+//   "metadata": {
+//     "description": "Username for the Virtual Machine."
+//   }
+// },
