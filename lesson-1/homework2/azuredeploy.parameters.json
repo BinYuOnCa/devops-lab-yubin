@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "yubin"
+    },
+    "adminPasswordOrKey": {
+      // "value": "GEN-PASSWORD"
+      "value": "https://benskeyvault4devops.vault.azure.net/secrets/publicKey/a535966e07c94c70a3debb958aa0cce8"
+    },
+    "dnsLabelPrefix": {
+      "value": "bens-dns-prefix"
+      // Message: The domain name label bensDNSPrefix is invalid. It must conform to the following
+      //  regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+      
+    }
+  }
+}
