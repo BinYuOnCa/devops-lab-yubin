@@ -268,8 +268,8 @@
         "settings": {
         },
         "protectedSettings": {
-          "commandToExecute": "bash setup-docker-compose.sh"
-          , "fileUris": [ "[parameters('configAppUri')]" ]
+          "commandToExecute": "bash setup-docker-compose.sh",
+          "fileUris": [ "[parameters('configAppUri')]" ]
         }
       }
     }
