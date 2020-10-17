@@ -1,0 +1,43 @@
+
+az keyvault create --name "BensKeyVault4DevOps" --resource-group "BensResourceGroup" --location "East US"
+
+az keyvault key create --vault-name "BensKeyVault4DevOps" --name "BensFirstKey" --protection software
+
+
+az keyvault key list --vault-name "BensKeyVault4DevOps"
+
+
+az keyvault secret set --vault-name "BensKeyVault4DevOps" --name "publicKey" --value "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD9Z5RqWjk5Dulo5+d9AhH6QgYKInrie8FaRh+Iq/vvUehJtE6LCTJ7caohzZxclfD4D+fQFDeF/62BwsmHo2EadGoCJRVGiIperKxCtoDd/MFosPt5YqwC1RaQ8NYHy6xlSs548+tvtDOTykDz1qgLJ6AlUEB4kM7yoLepcXRadiB1RiN+bmuaH23+UeDRFXn7TlXFlihm9Q2lVhOHJ4u551uFjZS98i1YQdNXShFT6FlTnxu2TCmZ4N7u8zKRmfYlYQvtl8qT6EFVqspqE1ARGsbGJWlSf+SBRkMJL3SNfjN30VMzhjBkGhIK0zBI2cUb8gmWzb55OsPFyek6tce3 yubin@M720-ubuntu"
+
+https://benskeyvault4devops.vault.azure.net/secrets/publicKey/a535966e07c94c70a3debb958aa0cce8
+
+
+templateFile=azuredeploy.json 
+
+az deployment group create --name devops-lab1-w2 --resource-group bensResourceGroup --template-file $templateFile --parameters @./azuredeploy.parameters.json
+
+
+Error:    "message": "The value of parameter linuxConfiguration.ssh.publicKeys.keyData is invalid.",
+
+az keyvault update  --name BensKeyVault4DevOps --enabled-for-template-deployment true
+
+openssl rsa -in ~/.ssh/id_rsa -pubout > id_rsa.pub
+
+az keyvault secret set --vault-name BensKeyVault4DevOps --name "admin-key" --value "`cat id_rsa.pub`"
+
+az keyvault secret set --vault-name BensKeyVault4DevOps --name "admin-password" --value `openssl rand -base64 16`
+
+jq -r ".value" >>>>>     "value": "SHOk7e+TCcVhw0N6tAGJgA=="
+
+az  deployment group create  --resource-group bensResourceGroup  --parameters @./azuredeploy.parameters.json  --template-file ./azuredeploy.json
+
+ssh yubin@bens-dns-prefix.eastus.cloudapp.azure.com
+
+az vm delete -y --ids $(az vm list --query "[].id" -o tsv)
+az disk delete -y --ids $(az disk list --query "[].id" -o tsv)
+
+for i in networkInterfaces publicIPAddresses networkSecurityGroups virtualNetworks
+do
+az resource delete --ids $(az resource list --query "[?type=='Microsoft.Network/${i}'].id" -o tsv)
+done
+

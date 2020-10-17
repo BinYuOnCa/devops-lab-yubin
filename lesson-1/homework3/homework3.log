@@ -1,0 +1,13 @@
+az  deployment group create  --resource-group bensResourceGroup  --parameters @./azuredeploy.parameters.json  --template-file ./azuredeploy.json
+
+
+ssh yubin@bens-dns-prefix.eastus.cloudapp.azure.com
+
+az vm delete -y --ids $(az vm list --query "[].id" -o tsv)
+az disk delete -y --ids $(az disk list --query "[].id" -o tsv)
+
+for i in networkInterfaces publicIPAddresses networkSecurityGroups virtualNetworks
+do
+az resource delete --ids $(az resource list --query "[?type=='Microsoft.Network/${i}'].id" -o tsv)
+done
+
