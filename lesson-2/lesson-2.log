@@ -1,0 +1,45 @@
+lesson-2 log 
+
+ssh -v  bens-dns-prefix.eastus.cloudapp.azure.com -p 9200
+
+failed 
+
+ssh -fNL 9200:localhost:9200 yubin@bens-dns-prefix.eastus.cloudapp.azure.com 
+
+---- localhost:9200 output ----
+{
+  "name" : "e7dda8b11283",
+  "cluster_name" : "docker-cluster",
+  "cluster_uuid" : "nViD6HkLRI6nHgXv_qVQDw",
+  "version" : {
+    "number" : "7.9.2",
+    "build_flavor" : "default",
+    "build_type" : "docker",
+    "build_hash" : "d34da0ea4a966c4e49417f2da2f244e3e97b4e6e",
+    "build_date" : "2020-09-23T00:45:33.626720Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.6.2",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+---------------------------------
+
+Download/install  Postman 
+
+Start Postman : 
+  Created environment azuretips-devops 
+
+
+----Local  Shell -----------------
+az ad sp create-for-rbac -n "azuretips-devops"
+Changing "azuretips-devops" to a valid URI of "http://azuretips-devops", which is the required format used for service principal names
+ValidationError: Directory permission is needed for the current user to register the application. For how to configure, please refer 'https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal'. Original error: Insufficient privileges to complete the operation.
+yubin@M720-ubuntu:~/GitRepos/devops-lab-yubin$ sudo az ad sp create-for-rbac -n "azuretips-devops"
+[sudo] password for yubin: 
+Sorry, try again.
+[sudo] password for yubin: 
+sudo: az: command not found
+
+--------------------------------------------------------------------------------------
