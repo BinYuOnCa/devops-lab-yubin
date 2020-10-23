@@ -1,6 +1,9 @@
 az  deployment group create  --resource-group bensResourceGroup  --parameters @./azuredeploy.parameters.json  --template-file ./azuredeploy.json
 
 
+
+ssh-keygen -f "/home/yubin/.ssh/known_hosts" -R "bens-dns-prefix.eastus.cloudapp.azure.com"
+
 ssh yubin@bens-dns-prefix.eastus.cloudapp.azure.com
 
 az vm delete -y --ids $(az vm list --query "[].id" -o tsv)
@@ -11,3 +14,17 @@ do
 az resource delete --ids $(az resource list --query "[?type=='Microsoft.Network/${i}'].id" -o tsv)
 done
 
+yubin@M720-ubuntu:~/GitRepos/devops-lab-yubin/lesson-1/homework3$ az  deployment group create  --resource-group bensResourceGroup  --parameters @./azuredeploy.parameters.json  --template-file ./azuredeploy.json
+ValidationError: Deployment failed. Correlation ID: 5b4e1338-b459-4826-bfe6-6329907dbc52. {
+  "status": "Failed",
+  "error": {
+    "code": "ResourceDeploymentFailure",
+    "message": "The resource operation completed with terminal provisioning state 'Failed'.",
+    "details": [
+      {
+        "code": "VMExtensionProvisioningError",
+        "message": "VM has reported a failure when processing extension 'config-app'. Error message: \"Enable failed: processing file downloads failed: failed to download file[0]: failed to download file: unexpected status code: actual=404 expected=200\"\r\n\r\nMore information on troubleshooting is available at https://aka.ms/VMExtensionCSELinuxTroubleshoot "
+      }
+    ]
+  }
+}

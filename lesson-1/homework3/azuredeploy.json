@@ -45,6 +45,12 @@
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
+    "configAppUri": {
+      "type": "string",
+      "metadata": {
+        "description": "Github uri of customer script to install application."
+      }
+    },
     "ubuntuOSVersion": {
       "type": "string",
       "defaultValue": "18.04-LTS",
@@ -102,7 +108,7 @@
     "subnetAddressPrefix": "10.1.0.0/24",
     "addressPrefix": "10.1.0.0/16",
     "linuxConfiguration": {
-      "disablePasswordAuthentication": true,
+      "disablePasswordAuthentication": false,
       "ssh": {
         "publicKeys": [
           {
@@ -249,7 +255,7 @@
         }
       }
     },
-     {
+    {
       "name": "[concat(parameters('vmName'),'/config-app')]",
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "location": "[resourceGroup().location]",
